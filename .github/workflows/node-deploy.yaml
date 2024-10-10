@@ -1,4 +1,4 @@
-name: DEPLOY TO STAGING(NODE)
+name: DEPLOY TO STAGING
 
 on:
   push:
