@@ -1,16 +1,17 @@
-module.exports = (app) => {
-  const auth = require("../controllers/auth.controller.js");
+  //routes/auth.routes.js
+  module.exports = (app) => {
+    const auth = require("../controllers/auth.controller.js");
 
-  var router = require("express").Router();
+    var router = require("express").Router();
 
-  // Login
-  router.post("/login", auth.login);
+    // Login
+    router.post("/login", auth.login);
 
-  // Authorization
-  router.post("/authorize/:id", auth.authorize);
+    // Authorization
+    router.post("/authorize/:id", auth.authorize);
 
-  // Logout
-  router.post("/logout", auth.logout);
+    // Logout
+    router.post("/logout", auth.logout);
 
-  app.use("/tutorial", router);
-};
+    app.use("/tutorial", router);
+  };

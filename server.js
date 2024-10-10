@@ -13,6 +13,7 @@
 
   var corsOptions = {
     origin: "*", // Allow all origins
+    credentials: true // Added this one during login config 
   };
   
   app.use(cors(corsOptions));
@@ -26,7 +27,7 @@
 
   // Simple route
   app.get("/", (req, res) => {
-    res.json({ message: "Welcome to bezkoda application." });
+    res.json({ message: "Welcome to bezkoder application." });
   });
 
   // Route imports
@@ -34,7 +35,8 @@
   require("./app/routes/user.routes")(app);
   require("./app/routes/tutorial.routes")(app);
   require("./app/routes/lesson.routes")(app);
-  require("./app/routes/course.routes.js")(app); // Add this line for courses
+  require("./app/routes/course.routes.js")(app); 
+  require("./app/routes/notification.routes.js")(app);
 
   // Set port, listen for requests
   const PORT = process.env.PORT || 3100;

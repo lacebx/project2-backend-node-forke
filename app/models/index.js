@@ -21,6 +21,7 @@ db.session = require("./session.model.js")(sequelize, Sequelize);
 db.tutorial = require("./tutorial.model.js")(sequelize, Sequelize);
 db.lesson = require("./lesson.model.js")(sequelize, Sequelize);
 db.course = require("./course.model.js")(sequelize, Sequelize);
+db.Notification = require('./notification.model')(sequelize, Sequelize.DataTypes);
 
 
 // foreign key for session
