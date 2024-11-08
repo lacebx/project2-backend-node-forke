@@ -17,7 +17,8 @@ jobs:
           node-version: "20"
       - run: npm install
       - run: npm run bundle
-          # "bundle": "mkdir deploy && cp -r app server.js package.json package-lock.json tutorial-backend.service deploy"
+        env:
+          NODE_ENV: production
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
@@ -27,7 +28,7 @@ jobs:
           REMOTE_HOST: "project2.eaglesoftwareteam.com"
           REMOTE_USER: ubuntu
           TARGET: "nodeapps/2024/project2/t8"
-      - name: Execute SSH commmands on remote server
+      - name: Execute SSH commands on remote server
         uses: JimCronqvist/action-ssh@master
         env:
           NAME: "Root"
