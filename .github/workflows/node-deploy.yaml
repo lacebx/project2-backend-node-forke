@@ -19,25 +19,6 @@ jobs:
       - run: npm run bundle
         env:
           NODE_ENV: production
-      - name: Create deployment files
-        run: |
-          mkdir -p deploy
-          cp -r dist/* deploy/
-          cat > course-backend.service << EOL
-          [Unit]
-          Description=Course Backend Node.js Service
-          After=network.target
-
-          [Service]
-          Type=simple
-          User=ubuntu
-          WorkingDirectory=/home/ubuntu/nodeapps/2024/project2/t8
-          ExecStart=/usr/bin/node server.js
-          Restart=on-failure
-
-          [Install]
-          WantedBy=multi-user.target
-          EOL
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:
