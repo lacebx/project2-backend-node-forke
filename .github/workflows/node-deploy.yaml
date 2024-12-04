@@ -24,7 +24,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO --delete"
-          SOURCE: "deploy/course-backend.service"
+          SOURCE: "tutorial-backend.service"
           REMOTE_HOST: "project2.eaglesoftwareteam.com"
           REMOTE_USER: ubuntu
           TARGET: "nodeapps/2024/project2/t8"
@@ -40,6 +40,6 @@ jobs:
             cd nodeapps/2024/project2/t8
             npm install
             sudo systemctl stop course-backend-t8
-            sudo cp course-backend.service /lib/systemd/system/course-backend-t8.service
+            sudo cp tutorial-backend.service /lib/systemd/system/course-backend-t8.service
             sudo systemctl daemon-reload
             sudo systemctl start course-backend-t8
