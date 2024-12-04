@@ -1,0 +1,13 @@
+[Unit]
+Description=Course Backend Node.js Service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/nodeapps/2024/project2/t8
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
