@@ -1,5 +1,5 @@
 module.exports = {
-  HOST: "127.0.0.1",
+  HOST: "0.0.0.0",
   USER: "root",
   PASSWORD: "YES",
   DB: "courses",
@@ -14,7 +14,7 @@ module.exports = {
 };
 
 console.log("DB Config:", {
-  HOST: "127.0.0.1",
+  HOST: "0.0.0.0",
   USER: "root",
   PASSWORD: "YES",
   DB: "courses",
